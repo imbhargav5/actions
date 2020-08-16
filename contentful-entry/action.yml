@@ -1,0 +1,17 @@
+name: 'contentful-entries'
+description: 'Get one or more contentful entries'
+inputs:
+  args:
+    required: false
+    description: Stringified args
+outputs:
+  entries:
+    description: 'Entries'
+  entry:
+    description: 'Entry'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'message-square'  
+  color: 'gray-dark'

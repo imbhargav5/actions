@@ -1,0 +1,19 @@
+name: 'contentful-entries'
+description: 'Get one or more contentful entries'
+inputs:
+  token:
+    required: true  
+    description: 'The GitHub authentication token'
+    default: ${{ github.token }}
+  args:
+    description: Arguments
+    required: false
+outputs:
+  entries:
+    description: 'Entries'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'message-square'  
+  color: 'gray-dark'

@@ -14,7 +14,7 @@ async function run(){
             space,
             accessToken
         }, args);
-        core.debug('entries', JSON.stringify(entries, null, 2))
+        console.log('entries', JSON.stringify(entries, null, 2))
         core.setOutput("entries", JSON.stringify(entries));
     }catch(err){
         console.log(err);

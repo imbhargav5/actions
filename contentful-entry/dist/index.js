@@ -9108,7 +9108,7 @@ async function run(){
             space,
             accessToken
         }, args);
-        core.debug('entry', JSON.stringify(entry, null, 2))
+        console.log('entry', JSON.stringify(entry, null, 2))
         core.setOutput("entry", JSON.stringify(entry));
     }catch(err){
         console.log(err);

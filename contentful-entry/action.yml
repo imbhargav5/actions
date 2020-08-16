@@ -1,4 +1,4 @@
-name: 'contentful-entries'
+name: 'contentful-entry'
 description: 'Get one or more contentful entries'
 inputs:
   space:

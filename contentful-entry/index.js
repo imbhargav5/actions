@@ -1,3 +1,5 @@
+const core = require('@actions/core');
+
 async function run(){
     try{
         const space = core.getInput("space");

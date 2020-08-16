@@ -9028,7 +9028,7 @@ module.exports = require("http");
 /***/ }),
 
 /***/ 622:
-/***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
+/***/ (function(module, __unusedexports, __webpack_require__) {
 
 async function run(){
     try{
@@ -9040,13 +9040,11 @@ async function run(){
         } catch (err) {}
 
         const getEntries = __webpack_require__(497);
-
-        const [entry, entries] = await getEntries({
+        const entries = await getEntries({
             space,
             accessToken
         }, args);
 
-        core.setOutput("entry", JSON.stringify(entry));
         core.setOutput("entries", JSON.stringify(entries));
     }catch(err){
         console.log(err);
@@ -9054,6 +9052,13 @@ async function run(){
 }
 
 
+
+module.exports = run;
+
+/* istanbul ignore next */
+if (require.main === require.cache[eval('__filename')]) {
+    run();
+}
 
 /***/ }),
 

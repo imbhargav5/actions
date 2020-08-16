@@ -8,16 +8,22 @@ async function run(){
         } catch (err) {}
 
         const getEntries = require('./getEntries');
-
-        const [entry, entries] = await getEntries({
+        const entries = await getEntries({
             space,
             accessToken
         }, args);
 
-        core.setOutput("entry", JSON.stringify(entry));
         core.setOutput("entries", JSON.stringify(entries));
     }catch(err){
         console.log(err);
     }
 }
 
+
+
+module.exports = run;
+
+/* istanbul ignore next */
+if (require.main === module) {
+    run();
+}

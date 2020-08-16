@@ -1,12 +1,16 @@
 name: 'contentful-entries'
 description: 'Get one or more contentful entries'
 inputs:
+  space:
+    required: true  
+    description: 'The contentful space id'
+  access-token:
+    required: true  
+    description: 'The contentful access token'
   args:
+    description: Arguments
     required: false
-    description: Stringified args
 outputs:
-  entries:
-    description: 'Entries'
   entry:
     description: 'Entry'
 runs:

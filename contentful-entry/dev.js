@@ -6,6 +6,6 @@ const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
 getEntry({
     space,
     accessToken
-}, '6XHXsUJm0sv616DHO4ExUA').then(response => {
+}, '5dlinQLBEavklJ2oIvcbWz').then(response => {
     console.log(response);
 });

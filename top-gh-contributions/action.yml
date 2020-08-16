@@ -1,0 +1,18 @@
+name: 'Get top github contributions'
+description: 'Create a comment for a PR on GitHub'
+inputs:
+  token:
+    required: true  
+    description: 'The GitHub authentication token'
+    default: ${{ github.token }}
+outputs:
+  topContributions:
+    description: 'Top contributions'
+  notableContributions:
+    description: 'Notable contributions'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'message-square'  
+  color: 'gray-dark'

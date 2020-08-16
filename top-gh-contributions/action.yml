@@ -6,9 +6,9 @@ inputs:
     description: 'The GitHub authentication token'
     default: ${{ github.token }}
 outputs:
-  topContributions:
+  top-contributions:
     description: 'Top contributions'
-  notableContributions:
+  notable-contributions:
     description: 'Notable contributions'
 runs:
   using: 'node12'

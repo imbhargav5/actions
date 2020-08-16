@@ -5,8 +5,8 @@ async function run(){
         const token = core.getInput('token')
         const getTopContributions = require('./getTopContributions');
         const [topContributions, notableContributions] = await getTopContributions(token);
-        core.setOutput('topContributions',topContributions);
-        core.setOutput('notableContributions',notableContributions);
+        core.setOutput('top-contributions',JSON.stringify(topContributions));
+        core.setOutput('notable-contributions',JSON.stringify(notableContributions));
     }catch(err){
         console.log(err);
     }

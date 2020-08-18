@@ -1,0 +1,15 @@
+name: 'codementor-profile'
+description: 'Get one or more contentful entries'
+inputs:
+  username:
+    required: true  
+    description: 'The codementor username'
+outputs:
+  mentor-profile:
+    description: 'Mentor profile stringified'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'message-square'  
+  color: 'gray-dark'

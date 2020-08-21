@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer')
 
-async function createPDF(url) {
+async function createPDF(url, args = {}) {
   try{
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: true,  ...args });
     const page = await browser.newPage();
     await page.goto(url, {waitUntil: 'networkidle0'});
     const pdf = await page.pdf({ format: 'A4' });

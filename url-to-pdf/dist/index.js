@@ -19040,7 +19040,9 @@ async function run(){
         const url = core.getInput('url')
         const outputFilePath = core.getInput('output-file-path')
         const createPDF = __webpack_require__(930);
-        const pdf = await createPDF(url);
+        const pdf = await createPDF(url, {
+            executablePath : 'google-chrome-unstable'
+        });
         await fs.writeFile(outputFilePath ,pdf);
     }catch(err){
         console.log(err);
@@ -27084,9 +27086,9 @@ exports.Target = Target;
 
 const puppeteer = __webpack_require__(701)
 
-async function createPDF(url) {
+async function createPDF(url, args = {}) {
   try{
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({ headless: true,  ...args });
     const page = await browser.newPage();
     await page.goto(url, {waitUntil: 'networkidle0'});
     const pdf = await page.pdf({ format: 'A4' });

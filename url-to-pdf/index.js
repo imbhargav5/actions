@@ -6,7 +6,9 @@ async function run(){
         const url = core.getInput('url')
         const outputFilePath = core.getInput('output-file-path')
         const createPDF = require('./createPDF');
-        const pdf = await createPDF(url);
+        const pdf = await createPDF(url, {
+            executablePath : 'google-chrome-unstable'
+        });
         await fs.writeFile(outputFilePath ,pdf);
     }catch(err){
         console.log(err);

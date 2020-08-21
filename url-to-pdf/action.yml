@@ -8,6 +8,10 @@ inputs:
     required: true
     description: 'The path to write the PDF file to'  
     default: 'output.pdf'
+  chrome-path:
+    required: true
+    description: Chrome path
+    default: '/usr/bin/google-chrome-unstable'
 runs:
   using: 'node12'
   main: 'dist/index.js'

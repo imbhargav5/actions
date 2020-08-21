@@ -19038,10 +19038,11 @@ const fs = __webpack_require__(747).promises;
 async function run(){
     try{
         const url = core.getInput('url')
+        const chromePath  = core.getInput('chrome-path');
         const outputFilePath = core.getInput('output-file-path')
         const createPDF = __webpack_require__(930);
         const pdf = await createPDF(url, {
-            executablePath : 'google-chrome-unstable',
+            executablePath: chromePath,
             args: ["--no-sandbox", "--disable-setuid-sandbox"]
         });
         await fs.writeFile(outputFilePath ,pdf);

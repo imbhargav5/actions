@@ -7,7 +7,7 @@ async function run(){
         const chromePath  = core.getInput('chrome-path');
         const outputFilePath = core.getInput('output-file-path')
         const createPDF = require('./createPDF');
-        const pdf = await createPDF(url, {
+        const pdf = await createPDF(url, {            
             executablePath: chromePath,
             args: ["--no-sandbox", "--disable-setuid-sandbox"]
         });
